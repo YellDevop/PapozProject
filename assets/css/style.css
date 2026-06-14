@@ -523,12 +523,72 @@ a {
     font-size: 0.85rem;
 }
 
+/* MOBILE MENU */
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: transparent;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-white);
+    transition: var(--transition);
+}
+
+.nav-mobile-cta {
+    display: none;
+}
+
 /* RESPONSIVE */
 
+@media (max-width: 1180px) {
+    .header-content {
+        gap: 22px;
+    }
+
+    .main-nav {
+        gap: 18px;
+        font-size: 0.75rem;
+    }
+
+    .header-btn {
+        padding: 0 22px;
+    }
+
+    .hero-content {
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 42px;
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .why-grid article {
+        border-right: none;
+    }
+}
+
 @media (max-width: 1024px) {
+    .section {
+        padding: 76px 0;
+    }
+
     .header-content {
         height: auto;
-        padding: 22px 0;
+        min-height: 78px;
+        padding: 18px 0;
         flex-wrap: wrap;
     }
 
@@ -537,16 +597,47 @@ a {
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
+        row-gap: 14px;
     }
 
-    .hero-content,
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 76px 0;
+    }
+
+    .hero-text {
+        max-width: 760px;
+    }
+
+    .hero-description {
+        max-width: 620px;
+    }
+
+    .hero-image {
+        height: clamp(340px, 52vw, 520px);
+    }
+
+    .hero-image::before {
+        display: none;
+    }
+
+    .hero-image img {
+        border-radius: var(--border-radius);
+    }
+
     .about-grid,
     .contact-grid {
         grid-template-columns: 1fr;
     }
 
-    .hero-content {
-        padding: 70px 0;
+    .about-grid {
+        gap: 48px;
     }
 
     .cards-grid,
@@ -555,14 +646,13 @@ a {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .why-grid article,
     .service-card,
     .stat-item {
         border-right: none;
+    }
+
+    .contact-grid {
+        gap: 34px;
     }
 
     .footer-grid {
@@ -570,38 +660,111 @@ a {
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .container {
-        width: min(100% - 28px, var(--container-width));
+        width: min(100% - 32px, var(--container-width));
+    }
+
+    .site-header {
+        position: sticky;
+    }
+
+    .header-content {
+        min-height: 74px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    .header-btn {
+        display: none;
+    }
+
+    .main-nav {
+        display: none;
+        grid-column: 1 / -1;
+        width: 100%;
+        padding: 18px 0 8px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        text-align: left;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 14px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .nav-mobile-cta {
+        display: block;
+        color: var(--color-gold);
+    }
+
+    body.nav-open .main-nav {
+        display: flex;
+    }
+
+    body.nav-open .menu-toggle span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    body.nav-open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    body.nav-open .menu-toggle span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .logo-icon {
+        font-size: 2.5rem;
+    }
+
+    .logo-text strong {
+        font-size: 1.65rem;
+    }
+
+    .logo-text small {
+        font-size: 0.62rem;
+        letter-spacing: 2px;
     }
 
     .section {
         padding: 64px 0;
     }
 
-    .main-nav {
-        display: none;
-    }
-
-    .header-content > .btn {
-        display: none;
-    }
-
-    .logo-text strong {
-        font-size: 1.6rem;
-    }
-
     .hero-content {
-        gap: 40px;
+        padding: 58px 0 64px;
+        gap: 38px;
     }
 
     .hero h1 {
-        font-size: 3rem;
+        font-size: clamp(2.55rem, 12vw, 4.2rem);
+        line-height: 0.98;
+        margin-bottom: 22px;
+    }
+
+    .hero-description {
+        font-size: 1.05rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-image {
+        height: auto;
     }
 
     .hero-image img {
-        border-radius: var(--border-radius);
+        width: 100%;
         min-height: 300px;
+        max-height: 420px;
+        object-fit: cover;
     }
 
     .cards-grid,
@@ -612,11 +775,104 @@ a {
         grid-template-columns: 1fr;
     }
 
-    .contact-grid {
-        gap: 32px;
+    .cards-grid,
+    .why-grid {
+        gap: 24px;
+    }
+
+    .service-card {
+        padding: 28px 0;
+        border-bottom: 1px solid rgba(201, 154, 74, 0.35);
+    }
+
+    .service-card:last-child {
+        border-bottom: none;
+    }
+
+    .stat-item {
+        padding: 24px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .about-text h2,
+    .contact h2 {
+        font-size: clamp(2rem, 9vw, 3rem);
+    }
+
+    .team-photo {
+        height: 360px;
+    }
+
+    .why-grid article {
+        padding: 24px 0;
+        border-bottom: 1px solid rgba(201, 154, 74, 0.35);
+    }
+
+    .why-grid article:last-child {
+        border-bottom: none;
+    }
+
+    .contact {
+        padding: 62px 0;
     }
 
     .footer-bottom {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: min(100% - 24px, var(--container-width));
+    }
+
+    .btn {
+        width: 100%;
+        min-height: 50px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .section-label {
+        letter-spacing: 2px;
+        font-size: 0.72rem;
+    }
+
+    .hero-content {
+        padding: 48px 0 56px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.35rem, 13vw, 3.35rem);
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-image img {
+        min-height: 260px;
+    }
+
+    .card-icon {
+        width: 66px;
+        height: 66px;
+        font-size: 1.6rem;
+    }
+
+    .stat-item strong {
+        font-size: 2.4rem;
+    }
+
+    .team-photo {
+        height: 310px;
+    }
+
+    .footer-grid {
+        gap: 30px;
     }
 }
