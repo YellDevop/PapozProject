@@ -106,16 +106,37 @@ a {
 .logo {
     display: flex;
     align-items: center;
-    flex-shrink: 0;
+    gap: 12px;
     text-decoration: none;
+    color: var(--color-white);
+    flex-shrink: 0;
 }
 
-.logo-img {
-    display: block;
-    width: auto;
-    height: 64px;
-    max-width: 220px;
-    object-fit: contain;
+.logo-icon {
+    color: var(--color-green);
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo-text strong {
+    font-family: var(--font-title);
+    color: var(--color-gold);
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.logo-text small {
+    color: var(--color-white);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .main-nav {
@@ -739,9 +760,21 @@ a {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    .logo-img {
-        height: 48px;
-        max-width: 160px;
+    .logo {
+        gap: 8px;
+    }
+
+    .logo-icon {
+        font-size: 34px;
+    }
+
+    .logo-text strong {
+        font-size: 26px;
+    }
+
+    .logo-text small {
+        font-size: 9px;
+        letter-spacing: 1.4px;
     }
 
     .section {
