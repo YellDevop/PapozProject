@@ -160,6 +160,12 @@ a {
 
 /* HERO */
 
+@media (min-width: 1400px) {
+    .hero h1 {
+        font-size: 4.05rem;
+    }
+}
+
 .hero {
     position: relative;
     min-height: 620px;
@@ -171,21 +177,21 @@ a {
 .hero-content {
     min-height: 620px;
     display: grid;
-    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    grid-template-columns: 0.78fr 1.22fr;
     align-items: center;
-    gap: 96px;
+    gap: 72px;
 }
 
 .hero-text {
     position: relative;
     z-index: 3;
-    max-width: 540px;
+    max-width: 500px;
     min-width: 0;
 }
 
 .hero h1 {
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: clamp(3rem, 4.8vw, 4.6rem);
+    font-size: clamp(3rem, 4.2vw, 4.15rem);
     line-height: 0.95;
     text-transform: uppercase;
     margin-bottom: 28px;
