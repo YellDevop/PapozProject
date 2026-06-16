@@ -853,7 +853,15 @@ a {
     }
 
     .team-photo {
-        height: 360px;
+        height: 430px;
+    }
+
+    .team-card:nth-child(1) .team-photo img {
+        object-position: center 25%;
+    }
+
+    .team-card:nth-child(2) .team-photo img {
+        object-position: center 20%;
     }
 
     .why-grid article {
@@ -941,7 +949,7 @@ a {
     }
 
     .team-photo {
-        height: 310px;
+        height: 430px;
     }
 
     .footer-grid {
