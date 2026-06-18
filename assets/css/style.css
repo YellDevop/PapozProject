@@ -106,13 +106,17 @@ a {
 .logo {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
     flex-shrink: 0;
+    height: 100%;
 }
 
 .logo-img {
-    width: 150px;
-    height: auto;
+    width: auto;
+    height: 76px;
+    max-width: 210px;
+    object-fit: contain;
     display: block;
 }
 
@@ -530,6 +534,16 @@ a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
+.footer-logo {
+    height: auto;
+    margin-bottom: 18px;
+}
+
+.footer-logo .logo-img {
+    height: 90px;
+    max-width: 240px;
+}
+
 .footer-grid h3 {
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -629,6 +643,11 @@ a {
         flex-wrap: wrap;
     }
 
+    .logo-img {
+        height: 64px;
+        max-width: 180px;
+    }
+
     .main-nav {
         order: 3;
         width: 100%;
@@ -717,6 +736,17 @@ a {
         grid-template-columns: 1fr auto;
         align-items: center;
         gap: 16px;
+        padding: 12px 0;
+    }
+
+    .logo {
+        height: auto;
+        justify-content: flex-start;
+    }
+
+    .logo-img {
+        height: 56px;
+        max-width: 155px;
     }
 
     .menu-toggle {
@@ -763,10 +793,6 @@ a {
 
     body.nav-open .menu-toggle span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .logo-img {
-    width: 120px;
     }
 
     .section {
@@ -861,6 +887,11 @@ a {
         padding: 62px 0;
     }
 
+    .footer-logo .logo-img {
+        height: 76px;
+        max-width: 210px;
+    }
+
     .footer-bottom {
         flex-direction: column;
     }
@@ -883,6 +914,11 @@ a {
         font-size: 0.72rem;
     }
 
+    .logo-img {
+        height: 50px;
+        max-width: 135px;
+    }
+
     .hero-content {
         padding: 48px 0 56px;
     }
@@ -903,10 +939,6 @@ a {
         min-height: 260px;
     }
 
-    .logo-img {
-    width: 105px;
-    }
-    
     .card-icon {
         width: 74px;
         height: 74px;
@@ -938,6 +970,11 @@ a {
 
     .team-photo {
         height: 430px;
+    }
+
+    .footer-logo .logo-img {
+        height: 68px;
+        max-width: 185px;
     }
 
     .footer-grid {
